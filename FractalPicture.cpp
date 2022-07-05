@@ -29,7 +29,7 @@ void FractalPicture::get_histogram() {
     }
 }
 
-void FractalPicture::create_image(std::string file_name) {
+void FractalPicture::create_image(const std::string& file_name) {
     int total = 0;
     for (auto i = 0; i < Mandelbrot::MAX_ITERATIONS; i++) {
         total += m_histogram[i];
@@ -47,9 +47,9 @@ void FractalPicture::create_image(std::string file_name) {
             RGB& last_color = m_colors[range + 1];
             RGB diff = last_color - first_color;
 
-            uint8_t red{};
-            uint8_t green{};
-            uint8_t blue{};
+            uint8_t red;
+            uint8_t green;
+            uint8_t blue;
 
             if (iterations != Mandelbrot::MAX_ITERATIONS) {
                 int total_pixels = 0;
@@ -57,9 +57,9 @@ void FractalPicture::create_image(std::string file_name) {
                     total_pixels += m_histogram[i];
                 }
 
-                red = first_color.r + diff.r*(double)total_pixels / total_ranges;
-                green = first_color.g + diff.g*(double)total_pixels / total_ranges;
-                blue = first_color.b + diff.b*(double)total_pixels / total_ranges;
+                red = uint8_t(first_color.r + diff.r*(double)total_pixels / total_ranges);
+                green = uint8_t(first_color.g + diff.g*(double)total_pixels / total_ranges);
+                blue = uint8_t(first_color.b + diff.b*(double)total_pixels / total_ranges);
 
                 bitmap.set_pixel(x, y, red, green, blue);
             }

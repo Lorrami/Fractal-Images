@@ -13,7 +13,7 @@ void ZoomList::add(const Zoom &zoom) {
     m_scale *= zoom.scale;
 }
 
-std::pair<double, double> ZoomList::get_fractals(int x, int y) {
+std::pair<double, double> ZoomList::get_fractals(int x, int y) const {
     double x_fractal = (x - m_width / 2) * m_scale + m_x_center;
     double y_fractal = (y - m_height / 2) * m_scale + m_y_center;
     return {x_fractal, y_fractal};

@@ -25,7 +25,7 @@ private:
 
     void get_histogram();
 
-    void create_image(std::string file_name);
+    void create_image(const std::string& file_name);
 
     void calculate_range_totals();
 

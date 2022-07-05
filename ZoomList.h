@@ -21,7 +21,7 @@ public:
 
     void add(const Zoom& zoom);
 
-    std::pair<double, double> get_fractals(int x, int y);
+    std::pair<double, double> get_fractals(int x, int y) const;
 };
 
 
