@@ -13,6 +13,7 @@ FractalPicture::FractalPicture(int width, int height) :
 void FractalPicture::zoom() {
     zoom_list.add(Zoom(m_width/2, m_height/2, 4.0/m_width));
     zoom_list.add(Zoom(295, m_height - 202, 0.1));
+    zoom_list.add(Zoom(305, m_height - 190, 0.05));
 }
 
 void FractalPicture::get_histogram() {

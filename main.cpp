@@ -14,7 +14,7 @@ int main() {
     fractal_picture.add_range(0.08, RGB(255, 215, 0));
     fractal_picture.add_range(1.0, RGB(255, 255, 255));
 
-    fractal_picture.run("test.bmp");
+    fractal_picture.run("test2.bmp");
 
     std::cout << "777" << std::endl;
     return 777;
